@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: wheat;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #100101a5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px wheat;
+}
+
+h1 {
+    text-align: center;
+    color:wheat;
+}
+
+.signup-form {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#isAdmin{
+    display:block;
+    width: 5%;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    
+}
+footer p{
+    display: block;
+    margin: 100px auto;
+    text-align: center;
+}

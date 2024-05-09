@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/userstyle.css">
+</head>
+<body>
+  <div class="container">
+    <button id="logoutBtn">Logout</button>
+    <h1 class="heading">User Dashboard: Incentive Calculation</h1>
+        <hr>
+        <p class="para">-:Perks And Benefits:-</p>
+        <ul class="perks">
+            <li class="perklist">Achieving 10,000 sales results in a 1.5% incentive.</li>
+            <li class="perklist">Achieving 20,000 sales results in a 3% incentive.</li>
+            <li class="perklist">Achieving 30,000 sales results in a 3.5% incentive plus a $1000 bonus.</li>
+            <li class="perklist">Achieving more than 50,000 sales results in a 5% incentive plus eligibility for a holiday package.</li>
+        </ul>
+        <form action="">
+          <label for="sales" id="sales">Sales Amount</label>
+          <input class="salefield" id="numberInput" type="number" placeholder="enter sales amount" required>
+          </form>
+          <button onclick="display()" class="subtn" type="submit">Submit</button>
+          <div id="results"></div>
+          <div id="results1"></div>
+          <br>
+    <div class="package-selection package-list" id="results2" style="display: none;">
+      <h2>Select a Holiday Package</h2>
+      <table id="packageTable">
+        <thead>
+          <tr>
+            <th>Holiday Name</th>
+            <th>Duration (Nights)</th>
+            <th>Destination</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+        <tbody id="packageTableBody">
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function display(){
+      let inputvalue= document.getElementById("numberInput").value;
+      let resultElement = document.getElementById("results");
+      let resultElement1 = document.getElementById("results1");
+      let resultElement2 = document.getElementById("results2");
+      inputvalue = Number(inputvalue);
+      if(inputvalue === ""){
+        resultElement.textContent = `Please enter valid Number.`;
+        resultElement1.textContent = `You are not eligible for Holiday Package.`;
+        resultElement2.style.display = "none";
+        return;
+    }
+    if(inputvalue >=10000 && inputvalue <=19999){
+        resultElement.textContent = `Incentive Money : $${inputvalue*1.5/100}`;
+        resultElement1.textContent = `You are not eligible for Holiday Package.`;
+        resultElement2.style.display = "none";
+        return;
+    }
+    else if(inputvalue >=20000 && inputvalue <=29999){
+        resultElement.textContent = `Incentive Money : $${inputvalue*3/100}`;
+        resultElement1.textContent = `You are not eligible for Holiday Package.`;
+        resultElement2.style.display = "none";
+        return;
+    }
+    else if(inputvalue >=30000 && inputvalue <=49999){
+        resultElement.textContent = `Incentive Money : $${inputvalue*3.5/100} and $1000 Bonus`;
+        resultElement1.textContent = `You are not eligible for Holiday Package.`;
+        resultElement2.style.display = "none";
+        return;
+    }
+    else if(inputvalue >=50000){
+        resultElement.textContent = `Incentive Money : $${inputvalue*5/100}`;
+        resultElement1.innerHTML = `Congratulations!!! You are eligible for Holiday Package.<br>Please select your preferences below.`;
+        resultElement2.style.display = "block";
+    }
+    else{
+        resultElement.textContent = `Not eligible for any Incentive.`;
+        resultElement1.textContent = `You are not eligible for Holiday Package.`;
+        resultElement2.style.display = "none";
+    }
+    }
+    document.getElementById("numberInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") { 
+        event.preventDefault(); 
+        display();
+    }
+  });
+  </script>
+  <script src="/user.js"></script>
+</body>
+</html>
