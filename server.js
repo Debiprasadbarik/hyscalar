@@ -5,47 +5,7 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const app = express();
 const port = 3000;
-// const nodemailer = require('nodemailer');
-// MySQL connection configuration
-//mail sending 
-// async function sendPackageEmail(userEmail, packageDetails) {
-//   // Create a Nodemailer transporter
-//   if (!userEmail) {
-//     console.warn('User email not provided. Skipping email notification.');
-//     return;
-//   }
-//   const transporter = nodemailer.createTransport({
-//     service: 'gmail', // Use a different service if desired
-//     auth: {
-//       user: 'webtestmail.debi@gmail.com', // Your email address
-//       pass: 'webtest@2024' // Your email password
-//     }
-//   });
 
-  // Define the email options
-  // const mailOptions = {
-  //   from: 'webtestmail.debi@gmail.com', // Your email address
-  //   to: userEmail,
-  //   subject: 'Holiday Package Booking Confirmation',
-  //   text: `You have booked the following holiday package:\n
-  //          Holiday Name: ${packageDetails.holiday_name}\n
-  //          Duration: ${packageDetails.duration} days\n
-  //          Destination: ${packageDetails.destination}\n
-  //          Thank you for your booking!`
-  // };
-
-//   try {
-//     // Send the email
-//     await transporter.sendMail(mailOptions);
-//     console.log('Email sent successfully');
-//     return true;
-//   } catch (error) {
-//     console.error('Error sending email:', error);
-//     return false;
-//   }
-// }
-
-//mail sending end
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'your_username',
